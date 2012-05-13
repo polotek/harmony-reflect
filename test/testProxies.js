@@ -92,7 +92,8 @@ function test() {
                       target);
     }
   } catch (e) {
-    print('fail: unexpected exception: '+ e);
+    print('fail: unexpected exception: '+ e.message);
+    print('fail: ' + e.stack);
   }
 }
 
