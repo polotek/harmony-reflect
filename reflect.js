@@ -1258,7 +1258,7 @@ Object.prototype.valueOf = function() {
 // ============= Reflection module =============
 // see http://wiki.ecmascript.org/doku.php?id=harmony:reflect_api
 
-global.Reflect = {
+var Reflect = global.Reflect = {
   getOwnPropertyDescriptor: function(target, name) {
     return Object.getOwnPropertyDescriptor(target, name);
   },
@@ -1709,7 +1709,7 @@ if (typeof StopIteration === "undefined") {
   global.StopIteration = {};
 }
 
-}(this, function(target, name) {
+}(typeof exports !== 'undefined' ? global : this, function(target, name) {
   // non-strict delete, will never throw
   return delete target[name];
 })); // function-as-module pattern
